@@ -7,7 +7,7 @@ const session = require('express-session')
 const cookies=require('cookie-parser')
 const userLoggedMiddleware=require('./middlewares/userLoggedMiddleware')
 
-const publicPatch = path.resolve(__dirname, "./public");
+const publicPatch = path.resolve(__dirname, "../public");
 
 app.use(express.static(publicPatch));
 app.use(session({
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 });
 app.get('*', function(req, res){
     console.log('404ing');
-    res.render('404');
+    res.render('error404');
   });
 
 app.listen(port || 3030, () => {
