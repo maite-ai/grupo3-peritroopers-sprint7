@@ -38,7 +38,7 @@ let productController = {
             return res.render('createProduct', {productBrand, productCategory, productColor})
         }
         catch(error){
-            res.render('error404')
+            res.render('404')
             console.log(error);
         }
     },
@@ -67,7 +67,7 @@ let productController = {
             res.render("editProduct", {product});
         }
         catch(error) {
-            res.render('error404');
+            res.render('404');
             console.log(error);
         }        
     },

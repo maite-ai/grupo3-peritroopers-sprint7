@@ -9,7 +9,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 router.get('/login', guestMiddleware, userController.login);
-router.post('/login', userController.loginProcess);
+router.post('/login', validations, userController.loginProcess);
 router.get('/profile', authMiddleware, userController.profile);
 router.get('/edit/:id', userController.edit);
 router.put('/edit/:id', userController.update);

@@ -1,8 +1,10 @@
 const path=require('path')
 const {body}=require('express-validator')
 const validations=[
-    body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
-    body('lastName').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('name').notEmpty().withMessage('Tienes que escribir un nombre').bail()
+    .isLength({ min: 2 }).withMessage('Nombre demasiado corto'),
+    body('lastName').notEmpty().withMessage('Tienes que escribir un apellido').bail()
+    .isLength({ min: 2 }).withMessage('Apellido demasiado corto'),
     body('birthDate').notEmpty().withMessage('Tienes que poner tu fecha de nacimiento'),
     body('address').notEmpty().withMessage('Tienes que poner tu dirección'),
     body('email')
@@ -19,7 +21,7 @@ const validations=[
         }),
     body('avatar').custom((value,{req})=>{
         let file=req.file
-        let acceptedExtentions=['.jpg','.png','.gif']
+        let acceptedExtentions=['.jpg','.jpeg','.png','.gif']
         if(!file){
             throw new Error('Tienes que subir una imágen')
         }else{
