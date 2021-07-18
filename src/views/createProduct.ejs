@@ -4,13 +4,40 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <form action="/products/store" method="POST" class="creation" enctype="multipart/form-data">
+        <form action="/products/create" method="POST" class="creation" enctype="multipart/form-data">
             <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
-            <input type="text" name="name" id="name" class="edits">
+            <input type="text" 
+            name="name " 
+            id="name" 
+            class="edits <%= locals.errors && errors.name?'is-invalid':null %>"
+            value="<%= locals.oldData?oldData.name:null %>">
+            <% if(locals.errors && errors.name) { %>
+                <div>
+                    <%= errors.name.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Descripción:</label>
-            <textarea name="description" id="decription" cols="30" rows="10" class="edits"></textarea>
+            <textarea name="description" 
+            id="decription" cols="30" rows="10" 
+            class="edits <%= locals.errors && errors.description?'is-invalid':null %>"
+            value="<%= locals.oldData?oldData.description:null %>"
+            ></textarea>
+            <% if(locals.errors && errors.description) { %>
+                <div>
+                    <%= errors.description.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Imágen:</label>
-            <input type="file" name="image" id="image">
+            <input type="file" 
+            name="image" 
+            id="image"
+            class= "<%= locals.errors && errors.image?'is-invalid':null %>"
+            value="<%= locals.oldData?oldData.image:null %>">
+            <% if(locals.errors && errors.image) { %>
+                <div>
+                    <%= errors.image.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Categoría:</label>
             <select name="categoryId" id="category" class="edits">
                 <option value=3>Auriculares</option>
@@ -35,8 +62,28 @@
                 <option value=5>Razer</option>
                 <option value=2>Redragon</option>
             </select>
+            <label for="" class="edits-2">Stock:</label>
+            <input type="input" 
+            name="stock" 
+            id="stock" 
+            class="edits <%= locals.errors && errors.stock?'is-invalid':null %>"
+            value="<%= locals.oldData?oldData.stock:null %>">
+            <% if(locals.errors && errors.stock) { %>
+                <div>
+                    <%= errors.stock.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Precio:</label>
-            <input type="input" name="price" id="price" class="edits">
+            <input type="input" 
+            name="price" 
+            id="price" 
+            class="edits <%= locals.errors && errors.price?'is-invalid':null %>"
+            value="<%= locals.oldData?oldData.price:null %>">
+            <% if(locals.errors && errors.price) { %>
+                <div>
+                    <%= errors.price.msg %>
+                </div>
+            <% } %>
             <div class="create-button">
                 <button type="submit" id="create-button" class="send-button">Añadir a Catálogo</button>
             </div> 

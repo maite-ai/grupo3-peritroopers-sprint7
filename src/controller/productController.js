@@ -1,7 +1,8 @@
-const path = require('path');
 const DB = require('../database/models');
+const { validationResult } = require('express-validator')
 const sequelize = DB.sequelize;
 const { Op } = require("sequelize");
+
 
 let productController = {
     home: (req, res) => {
@@ -45,19 +46,33 @@ let productController = {
 
     // Función que simula el almacenamiento (?)
     store: async (req, res) => {
-        console.log('llegue al store')
-        console.log(req.body)
-        let productCreated = await DB.Product.create({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            image: req.file.filename,
-            stock: req.body.stock,
-            brandId: req.body.brandId,
-            categoryId: req.body.categoryId,
-            colorId: req.body.colorId
-        })
-        res.redirect('/');
+        try {
+            const resultValidation = validationResult(req)
+            if(resultValidation.errors.length>0){
+                return res.render('createProduct',{
+                    error:resultValidation.mapped(),
+                    oldData:req.body
+                }) 
+            } 
+            console.log('Llegue al store')
+            console.log(req.body)
+            let productToCreate = {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                image: req.file.filename,
+                stock: req.body.stock,
+                brandId: req.body.brandId,
+                categoryId: req.body.categoryId,
+                colorId: req.body.colorId
+            }
+            console.log(`Producto por crearse:`, {productToCreate});
+            let productCreated = await DB.Product.create(productToCreate);
+            console.log(`Producto creado:`, {productCreated});
+
+            return res.redirect('/');
+        }
+        catch(error){console.log(error)}
     },
 
     edit: async (req, res) => {
