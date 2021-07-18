@@ -7,8 +7,18 @@
         <form action="/products/<%= product.id %>?_method=PUT" method="POST" class="creation" enctype="multipart/form-data">
             <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
             <input type="text" name="name" id="name" class="edits" value="<%= product.name %>">
+            <% if(locals.errors && errors.name) { %>
+                <div>
+                    <%= errors.name.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Descripción:</label>
-            <textarea name="description" id="decription" cols="30" rows="10" class="edits" value="<%= product.description %>"><%= product.description %></textarea>
+            <textarea name="description" id="description" cols="30" rows="10" class="edits" value="<%= product.description %>"><%= product.description %></textarea>
+            <% if(locals.errors && errors.description) { %>
+                <div>
+                    <%= errors.name.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Imágen:</label>
             <input type="file" name="image" id="image">
             <input type="hidden" name="oldImage" id="image" value="<%= product.image %>">
@@ -36,6 +46,16 @@
                 <option value=5>Razer</option>
                 <option value=2>Redragon</option>
             </select>
+            <input type="input" 
+            name="stock" 
+            id="stock" 
+            class="edits <%= locals.errors && errors.stock?'is-invalid':null %>"
+            value="<%= product.stock %>">
+            <% if(locals.errors && errors.stock) { %>
+                <div>
+                    <%= errors.stock.msg %>
+                </div>
+            <% } %>
             <label for="" class="edits-2">Precio:</label>
             <input type="input" name="price" id="price" class="edits" value="<%= product.price %>">
 
