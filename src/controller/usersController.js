@@ -59,7 +59,7 @@ let userController = {
             res.render("userEdit", {user});
         }
         catch(error) {
-            res.render('error404');
+            res.render('404');
             console.log(error);
         }        
     },

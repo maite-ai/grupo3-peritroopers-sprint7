@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/peirios/grupo_3_dhtroopers#readme",
   "devDependencies": {
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.12"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
