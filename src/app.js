@@ -7,7 +7,7 @@ const session = require('express-session')
 const cookies=require('cookie-parser')
 const userLoggedMiddleware=require('./middlewares/userLoggedMiddleware')
 
-const publicPatch = path.resolve(__dirname, "./public");
+const publicPatch = path.resolve(__dirname, "../public");
 
 app.use(express.static(publicPatch));
 app.use(session({
@@ -31,11 +31,11 @@ app.use('/users', userRouter);
 app.use('/', homeRouter);
 app.use('/products', productRouter);
 app.use((req, res, next) => {
-    res.status(404).render('error404');
+    res.status(404).render('404');
     next()
 });
 app.get('*', function(req, res){
-    console.log('404ing');
+    console.log('ERROR');
     res.render('404');
   });
 
