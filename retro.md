@@ -2,7 +2,6 @@
 
 # PeriTroopers.com.ar
 
-## - IMPORTANTE: Consigna... Actualizar el archivo retro.md con las principales conclusiones de la retro del sprint anterior. -
 
 Realizamos una retrospectiva de cómo funcionamos como equipo durante el Sprint 5, centrandonos en crecer y mejorar en cara a los próximos desafios, y lo realizamos mediante la dinámica de la **estrella de mar**. Las conclusiones a las que llegamos fueron las siguientes:
 
@@ -24,6 +23,6 @@ En cuanto a **“Dejar de hacer“ y “Menos de”**, estamos continuamente en 
   ***   
 
       
-¿Querés ver como trabajamos este Sprint? Visitá [nuestro tablero de Sprint 6](https://trello.com/b/f9JaDVY1/sprint-6) en Trello.
+¿Querés ver como trabajamos este Sprint? Visitá [nuestro tablero de Sprint 7](https://trello.com/b/ddauf4ZZ/sprint-7) en Trello.
 
 ![Logo de DH-Troopers](logo-grupo.gif)
