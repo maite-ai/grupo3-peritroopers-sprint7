@@ -12,7 +12,7 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login', validations, userController.loginProcess);
 router.get('/profile', authMiddleware, userController.profile);
 router.get('/edit/:id', userController.edit);
-router.put('/edit/:id', userController.update);
+router.put('/:id', userController.update);
 router.get('/logout', userController.logout);
 
 module.exports = router;

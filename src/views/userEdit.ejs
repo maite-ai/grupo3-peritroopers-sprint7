@@ -54,24 +54,6 @@
                                     </div>
                                 <% } %>
                             </div>
-                            <div class="contenedor-regform password">
-                                <label class="labelPassword" id="labelPassword">Nueva Contraseña</label>
-                                <input type="password" class="inputPassword" name="password" placeholder="**********">
-                                <% if(locals.errors && errors.password){ %>
-                                    <div class="text-danger">
-                                        <%= errors.password.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
-                            <div class="contenedor-regform">
-                                <label class="labelRePassword" id="labelRePassword">Repita su Contraseña</label>
-                                <input type="password" class="inputRePassword" placeholder="**********" name="confirmPassword">
-                                <% if(locals.errors && errors.confirmPassword){ %>
-                                    <div class="text-danger">
-                                        <%= errors.confirmPassword.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
                                 <input type="file" class="inputAvatar" name="avatar">

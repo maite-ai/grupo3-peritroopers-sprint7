@@ -54,6 +54,7 @@ let userController = {
 
     edit: async (req, res) => {
         try{
+            console.log('Llegue al formulario de edición')
             let user = await db.User.findByPk(req.params.id);
             console.log(user);
             res.render("userEdit", {user});
@@ -65,14 +66,11 @@ let userController = {
     },
     update: async (req, res) => {
         try {
+        console.log('Se está intentando almacenar algo')
         let userUpdated = await db.User.update({
-            ...req.body,
             name: req.body.name,
             lastName: req.body.lastName,
-            birthDate: req.body.birthDate,
             address: req.body.address,
-            email: req.body.email,
-            password:bcryptjs.hashSync(req.body.password,10),
             avatar:req.file.filename
         },{
             where: {
