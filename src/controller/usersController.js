@@ -1,5 +1,5 @@
 const bcryptjs=require('bcryptjs')
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -48,7 +48,7 @@ let userController = {
             console.log(`USUARIO CREADO:`, {userCreated})
 
             return res.redirect('/users/login');
-        }      
+        }
         catch(error){console.log(error)}
     },
 
