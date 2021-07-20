@@ -1,5 +1,5 @@
 const bcryptjs=require('bcryptjs')
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -48,14 +48,14 @@ let userController = {
             console.log(`USUARIO CREADO:`, {userCreated})
 
             return res.redirect('/users/login');
-        }      
+        }
         catch(error){console.log(error)}
     },
 
     edit: async (req, res) => {
         try{
             console.log('Llegue al formulario de edición')
-            let user = await db.User.findByPk(req.params.id);
+            let user = await db.User.findByPk(req.session.userLogged.id);
             console.log(user);
             res.render("userEdit", {user});
         }

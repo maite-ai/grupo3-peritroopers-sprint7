@@ -6,21 +6,26 @@
     <main>
         <form action="/products/create" method="POST" class="creation" enctype="multipart/form-data">
             <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
-            <input type="text" 
-            name="name " 
-            id="name" 
-            class="edits <%= locals.errors && errors.name?'is-invalid':null %>"
-            value="<%= locals.oldData?oldData.name:null %>">
+            <input
+                type="text" 
+                name="name " 
+                id="name" 
+                class="edits <%= locals.errors && errors.name?'is-invalid':null %>"
+                value="<%= locals.oldData?oldData.name:null %>"
+            >
             <% if(locals.errors && errors.name) { %>
                 <div>
                     <%= errors.name.msg %>
                 </div>
             <% } %>
             <label for="" class="edits-2">Descripción:</label>
-            <textarea name="description" 
-            id="decription" cols="30" rows="10" 
-            class="edits <%= locals.errors && errors.description?'is-invalid':null %>"
-            value="<%= locals.oldData?oldData.description:null %>"
+            <textarea
+                name="description" 
+                id="description"
+                cols="30"
+                rows="10" 
+                class="edits <%= locals.errors && errors.description?'is-invalid':null %>"
+                value="<%= locals.oldData?oldData.description:null %>"
             ></textarea>
             <% if(locals.errors && errors.description) { %>
                 <div>
@@ -28,11 +33,13 @@
                 </div>
             <% } %>
             <label for="" class="edits-2">Imágen:</label>
-            <input type="file" 
-            name="image" 
-            id="image"
-            class= "<%= locals.errors && errors.image?'is-invalid':null %>"
-            value="<%= locals.oldData?oldData.image:null %>">
+            <input
+                type="file" 
+                name="image" 
+                id="image"
+                class= "<%= locals.errors && errors.image?'is-invalid':null %>"
+                value="<%= locals.oldData?oldData.image:null %>"
+            >
             <% if(locals.errors && errors.image) { %>
                 <div>
                     <%= errors.image.msg %>
@@ -74,11 +81,12 @@
                 </div>
             <% } %>
             <label for="" class="edits-2">Precio:</label>
-            <input type="input" 
-            name="price" 
-            id="price" 
-            class="edits <%= locals.errors && errors.price?'is-invalid':null %>"
-            value="<%= locals.oldData?oldData.price:null %>">
+            <input
+                type="input" 
+                name="price" 
+                id="price" 
+                class="edits <%= locals.errors && errors.price?'is-invalid':null %>"
+                value="<%= locals.oldData?oldData.price:null %>">
             <% if(locals.errors && errors.price) { %>
                 <div>
                     <%= errors.price.msg %>
