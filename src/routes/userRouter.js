@@ -11,7 +11,7 @@ router.post('/register', uploadFile.single('avatar'), validations, userControlle
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', validations, userController.loginProcess);
 router.get('/profile', authMiddleware, userController.profile);
-router.get('/edit/:id', userController.edit);
+router.get('/edit', userController.edit);
 router.put('/:id', userController.update);
 router.get('/logout', userController.logout);
 

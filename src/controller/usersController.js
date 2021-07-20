@@ -55,7 +55,7 @@ let userController = {
     edit: async (req, res) => {
         try{
             console.log('Llegue al formulario de edición')
-            let user = await db.User.findByPk(req.params.id);
+            let user = await db.User.findByPk(req.session.userLogged.id);
             console.log(user);
             res.render("userEdit", {user});
         }
