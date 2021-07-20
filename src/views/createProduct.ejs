@@ -8,7 +8,7 @@
             <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
             <input
                 type="text" 
-                name="name " 
+                name="name" 
                 id="name" 
                 class="edits <%= locals.errors && errors.name?'is-invalid':null %>"
                 value="<%= locals.oldData?oldData.name:null %>"
@@ -25,8 +25,7 @@
                 cols="30"
                 rows="10" 
                 class="edits <%= locals.errors && errors.description?'is-invalid':null %>"
-                value="<%= locals.oldData?oldData.description:null %>"
-            ></textarea>
+            ><%=locals.oldData?oldData.description:null%></textarea>
             <% if(locals.errors && errors.description) { %>
                 <div>
                     <%= errors.description.msg %>

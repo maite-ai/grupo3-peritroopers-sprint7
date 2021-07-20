@@ -50,13 +50,12 @@ let productController = {
             const resultValidation = validationResult(req)
             if(resultValidation.errors.length>0){
                 return res.render('createProduct',{
-                    error:resultValidation.mapped(),
+                    errors:resultValidation.mapped(),
                     oldData:req.body
                 }) 
             } 
             console.log('Llegue al store')
-            console.log(req.body)
-            let productToCreate = {
+            let productToCreate = await DB.Product.create({
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
@@ -65,10 +64,7 @@ let productController = {
                 brandId: req.body.brandId,
                 categoryId: req.body.categoryId,
                 colorId: req.body.colorId
-            }
-            console.log(`Producto por crearse:`, {productToCreate});
-            let productCreated = await DB.Product.create(productToCreate);
-            console.log(`Producto creado:`, {productCreated});
+            })
 
             return res.redirect('/');
         }
@@ -118,12 +114,13 @@ let productController = {
     },
 
     destroy: async (req, res) => {
-        console.log("entre al destroy")
-        let productId = req.params.id;
-        await DB.Product.destroy({ where: { id: productId }, force: true });
-            
-        return res.redirect('/')
-        .catch(error => res.send(error))
+        try {
+            console.log("entre al destroy")
+            let productId = req.params.id;
+            await DB.Product.destroy({ where: { id: productId }, force: true });
+            return res.redirect('/')
+        }
+        catch(error){res.send(error)}
     },
 
     delete: (req, res) => {
