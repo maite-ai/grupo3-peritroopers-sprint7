@@ -35,8 +35,8 @@ app.use((req, res, next) => {
     next()
 });
 app.get('*', function(req, res){
-    console.log('404ing');
-    res.render('error404');
+    console.log('ERROR');
+    res.render('404');
   });
 
 app.listen(port || 3030, () => {
