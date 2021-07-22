@@ -13,106 +13,116 @@
                                 <label class="labelName" id="labelName">Nombre</label>
                                 <input 
                                     type="text"
-                                    class="inputName <%= locals.errors && errors.name?'is-invalid':null %>"
+                                    class="inputName <%= locals && locals.errors && errors.name?'error-input':null %>"
                                     id="name"
                                     name="name"
                                     placeholder="Cosme"
-                                    value="<%= locals.oldData?oldData.name:null %>"
-                                >
-                                <% if(locals.errors && errors.name) { %>
-                                    <div>
-                                        <%= errors.name.msg %>
-                                    </div>
-                                <% } %>
+                                    value="<%= locals && locals.oldData?oldData.name:null %>"
+                                    autofocus
+                                    >
+                                <div class="errors">
+                                <% locals && locals.errors && errors.name && errors.name.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform lastName">
                                 <label class="labelLastName" id="labelLastName">Apellido</label>
                                 <input
                                     type="text"
-                                    class="inputLastName <%= locals.errors && errors.lastName?'is-invalid':null %>"
+                                    class="inputLastName <%= locals && locals.errors && errors.lastName?'error-input':null %>"
                                     id="lastName"
                                     name="lastName"
                                     placeholder="Fulanito"
-                                    value="<%= locals.oldData?oldData.lastName:null %>"
+                                    value="<%= locals && locals.oldData?oldData.lastName:null %>"
+                                    autofocus
                                 >
-                                <% if(locals.errors && errors.lastName) { %>
-                                    <div>
-                                        <%= errors.lastName.msg %>
-                                    </div>
-                                <% } %>
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.lastName && errors.lastName.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform age">
                                 <label class="labelAge" id="labelAge">Fecha de Nacimiento</label>
                                 <input
                                     type="date"
-                                    class="inputAge <%= locals.errors && errors.birthDate?'is-invalid':null %>"
+                                    class="inputAge <%= locals && locals.errors && errors.birthDate?'error-input':null %>"
                                     id="birthDate"
                                     name="birthDate"
                                     placeholder="Fecha de Nacimiento"
-                                    value="<%= locals.oldData?oldData.birthDate:null %>"
+                                    value="<%= locals && locals.oldData?oldData.birthDate:null %>"
+                                    autofocus
                                 >
-                                <% if(locals.errors && errors.birthDate) { %>
-                                    <div>
-                                        <%= errors.birthDate.msg %>
-                                    </div>
-                                <% } %>
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.birthDate && errors.birthDate.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform address">
                                 <label class="labelAddress" id="labelAddress">Dirección</label>
                                 <input
                                     type="text"
-                                    class="inputAddress <%= locals.errors && errors.address?'is-invalid':null %>"
+                                    class="inputAddress <%= locals && locals.errors && errors.address?'error-input':null %>"
                                     id="address"
                                     name="address"
                                     placeholder="Dirección"
-                                    value="<%= locals.oldData?oldData.address:null %>"
+                                    value="<%= locals && locals.oldData?oldData.address:null %>"
+                                    autofocus
                                 >
-                                <% if(locals.errors && errors.address) { %>
-                                    <div>
-                                        <%= errors.address.msg %>
-                                    </div>
-                                <% } %>
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.address && errors.address.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform enail">
                                 <label class="labelEmail" id="labelEmail">Email</label>
                                 <input
                                     type="email"
-                                    class="inputEmail"
+                                    class="inputEmail <%= locals && locals.errors && errors.email?'error-input':null %>"
                                     id="email"
                                     name="email"
                                     placeholder="example@gmail.com"
-                                    value="<%= locals.oldData ? oldData.email : null %>">
-                                    <% if(locals.errors && errors.email){ %>
-                                        <div class="errorMsg"><%= errors.email.msg %></div>
-                                    <% } %>
+                                    value="<%= locals && locals.oldData ? oldData.email : null %>"
+                                    autofocus
+                                    >
+                                    <div class="errors">
+                                        <% locals && locals.errors && errors.email && errors.email.msg %>
+                                    </div>
                                 
                             </div>
                             <div class="contenedor-regform password">
                                 <label class="labelPassword" id="labelPassword">Contraseña</label>
-                                <input type="password" id="password" name="password" class="inputPassword" name="password" placeholder="**********">
-                                <% if(locals.errors && errors.password){ %>
-                                    <div class="text-danger">
-                                        <%= errors.password.msg %>
-                                    </div>
-                                <% } %>
+                                <input type="password" 
+                                id="password" 
+                                name="password" 
+                                class="inputPassword <%= locals && locals.errors && errors.password?'error-input':null %>" 
+                                name="password" 
+                                placeholder="**********"
+                                autofocus
+                                >
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.password && errors.password.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelRePassword" id="labelRePassword">Repita su contraseña</label>
-                                <input type="password" id="confirmPassword" class="inputRePassword" placeholder="**********" name="confirmPassword">
-                                <% if(locals.errors && errors.confirmPassword){ %>
-                                    <div class="text-danger">
-                                        <%= errors.confirmPassword.msg %>
-                                    </div>
-                                <% } %>
+                                <input type="password" 
+                                id="confirmPassword" 
+                                class="inputRePassword <%= locals && locals.errors && errors.confirmPassword?'error-input':null %>" 
+                                placeholder="**********" 
+                                name="confirmPassword"
+                                autofocus
+                                >
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.confirmPassword && errors.confirmPassword.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
-                                <input type="file" id="avatar" class="inputAvatar" name="avatar">
-                                <% if(locals.errors && errors.avatar){ %>
-                                    <div>
-                                        <%= errors.avatar.msg %>
-                                    </div>
-                                <% } %>
+                                <input type="file" 
+                                id="avatar" 
+                                class="inputAvatar  <%= locals && locals.errors && errors.avatar?'error-input':null %>" 
+                                name="avatar"
+                                autofocus
+                                >
+                                <div class="errors">
+                                    <% locals && locals.errors && errors.avatar && errors.avatargit .msg %>
+                                </div>
                             </div>
                         </div>
                         
