@@ -53,7 +53,9 @@
                         <li class="secciones"><a href="/users/register">Creá tu cuenta</a></li>
                         <li class="secciones"><a href="/users/login">Ingresá</a></li>
                     <% } %>
+                <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
                     <li class="secciones"><a href="/products/create">Crear Producto</a></li>
+                <% } %>
             </ul>
         </nav>
     </section>
