@@ -98,7 +98,7 @@
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelRePassword" id="labelRePassword">Repita su contraseña</label>
-                                <input type="password" id="password" class="inputRePassword" placeholder="**********" name="confirmPassword">
+                                <input type="password" id="confirmPassword" class="inputRePassword" placeholder="**********" name="confirmPassword">
                                 <% if(locals.errors && errors.confirmPassword){ %>
                                     <div class="text-danger">
                                         <%= errors.confirmPassword.msg %>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
-                                <input type="file" id="file" class="inputAvatar" name="avatar">
+                                <input type="file" id="avatar" class="inputAvatar" name="avatar">
                                 <% if(locals.errors && errors.avatar){ %>
                                     <div>
                                         <%= errors.avatar.msg %>
@@ -129,6 +129,8 @@
                 </section>
             </main>
             <%- include('partials/footer') %>
+
+            <script src="/js/validation-register.js"></script>
     </body>
 
 </html>
