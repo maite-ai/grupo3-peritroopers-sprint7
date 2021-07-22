@@ -29,9 +29,9 @@ let fieldMin = function(field, min) {
     }
 }
 
-let fieldRegex = function(field, regex, msg) {
+let fieldRegex = function(field, regex, message) {
     if(!regex){
-        return msg;
+        return message;
     } else {
         return "";
     }
