@@ -29,7 +29,7 @@ let passwordValidation = function() {
     let feedbackElement = password.nextElementSibling
 
     if(password.value.trim() == ''){
-        feedback = 'Debe ingresar una contraseña';
+        feedback = 'Debes ingresar una contraseña';
     } else if(password.value.length < 8) {
         feedback = 'La contraseña debe contener 8 caracteres como mínimo'
     } 

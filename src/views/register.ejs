@@ -20,13 +20,9 @@
                                     value="<%= locals && locals.oldData?oldData.name:null %>"
                                     autofocus
                                     >
-                                    <% if(locals && locals.errors && errors.name) { %>
-                                        <span><%= errors.name.msg %></span>
-                                    <% } %>
-                                <div id="error-name">
-                                    <ul>
-                                        
-                                    </ul>
+                    
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.name && errors.name.msg %>
                                 </div>
                             </div>
                             <div class="contenedor-regform lastName">
@@ -40,14 +36,10 @@
                                     value="<%= locals && locals.oldData?oldData.lastName:null %>"
                                     autofocus
                                 >
-                                <% if(locals && locals.errors && errors.lastName) { %>
-                                    <span><%= errors.lastName.msg %></span>
-                                <% } %>
-                            <div id="error-lastName">
-                                <ul>
-                                    
-                                </ul>
-                            </div>
+                               
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.lastName && errors.lastName.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform age">
                                 <label class="labelAge" id="labelAge">Fecha de Nacimiento</label>
@@ -60,14 +52,9 @@
                                     value="<%= locals && locals.oldData?oldData.birthDate:null %>"
                                     autofocus
                                 >
-                                <% if(locals && locals.errors && errors.birthDate) { %>
-                                    <span><%= errors.birthDate.msg %></span>
-                                <% } %>
-                            <div id="error-birthDate">
-                                <ul>
-                                    
-                                </ul>
-                            </div>
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.birthDate && errors.birthDate.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform address">
                                 <label class="labelAddress" id="labelAddress">Dirección</label>
@@ -80,14 +67,9 @@
                                     value="<%= locals && locals.oldData?oldData.address:null %>"
                                     autofocus
                                 >
-                                <% if(locals && locals.errors && errors.address) { %>
-                                    <span><%= errors.address.msg %></span>
-                                <% } %>
-                            <div id="error-address">
-                                <ul>
-                                    
-                                </ul>
-                            </div>
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.address && errors.address.msg %>
+                                </div>
                             </div>
                             <div class="contenedor-regform enail">
                                 <label class="labelEmail" id="labelEmail">Email</label>
@@ -100,14 +82,9 @@
                                     value="<%= locals && locals.oldData ? oldData.email : null %>"
                                     autofocus
                                     >
-                                    <% if(locals && locals.errors && errors.email) { %>
-                                        <span><%= errors.email.msg %></span>
-                                    <% } %>
-                                <div id="error-email">
-                                    <ul>
-                                        
-                                    </ul>
-                                </div>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.email && errors.email.msg %>
+                                    </div>
                                 
                             </div>
                             <div class="contenedor-regform password">
@@ -120,14 +97,9 @@
                                     placeholder="**********"
                                     autofocus
                                     >
-                                    <% if(locals && locals.errors && errors.password) { %>
-                                        <span><%= errors.password.msg %></span>
-                                    <% } %>
-                                <div id="error-password">
-                                    <ul>
-                                        
-                                    </ul>
-                                </div>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.password && errors.password.msg %>
+                                    </div>
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelRePassword" id="labelRePassword">Repita su contraseña</label>
@@ -138,14 +110,9 @@
                                     name="confirmPassword"
                                     autofocus
                                     >
-                                    <% if(locals && locals.errors && errors.confirmPassword) { %>
-                                        <span><%= errors.confirmPassword.msg %></span>
-                                    <% } %>
-                                <div id="error-confirmPassword">
-                                    <ul>
-                                        
-                                    </ul>
-                                </div>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.confirmPassword && errors.confirmPassword.msg %>
+                                    </div>
                             </div>
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
@@ -155,14 +122,9 @@
                                     name="avatar"
                                     autofocus
                                     >
-                                    <% if(locals && locals.errors && errors.avatar) { %>
-                                        <span><%= errors.avatar.msg %></span>
-                                    <% } %>
-                                <div id="error-avatar">
-                                    <ul>
-
-                                    </ul>
-                                </div>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.avatar && errors.avatar.msg %>
+                                    </div>
                             </div>
                         </div>
                         

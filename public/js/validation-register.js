@@ -42,22 +42,6 @@ const fileExtValidate = function(path, msg, values) {
     return values.some(value => value === pathExt) ? "" : msg
 }
 
-/* const isEmailAvailable = function(email) {
-    let host = window.location.href.replace("users/register", "api/users/isEmailAvailable/");
-    return new Promise(resolve => {
-        fetch(host + email)
-        .then(response => response.json())
-        .then(data => {
-            if(data.data.isAvailable) resolve(true)
-            resolve(false)
-        })
-        .catch(err => {
-            console.log(err);
-            throw (err);
-        })
-    })
-}*/
-
 const areSameValues = (value1, value2, msg) => value1 == value2 ? "" : msg;
 
 let validateName = function() {
