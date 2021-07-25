@@ -3,22 +3,25 @@
 # PeriTroopers.com.ar
 
 
-Realizamos una retrospectiva de cómo funcionamos como equipo durante el Sprint 5, centrandonos en crecer y mejorar en cara a los próximos desafios, y lo realizamos mediante la dinámica de la **estrella de mar**. Las conclusiones a las que llegamos fueron las siguientes:
+Realizamos una retrospectiva de cómo funcionamos como equipo durante el Sprint 6, centrandonos en crecer y mejorar en cara a los próximos desafios, y lo realizamos mediante la dinámica de la **estrella de mar**. Las conclusiones a las que llegamos fueron las siguientes:
 
 ##  - Comenzar a hacer -
 
-Tal como mencionamos en las retrospectivas realizadas anteriormente, creemos que a esta altura del proyecto ya nos encontramos cómodos con las metodologías utilizadas, trabajando en equipo, avanzando en conjunto, siempre buscando mejoras u oportunidades que podamos incluir en el recorrido, y elegimos seguir trabajando de esta manera.
+Luego de trabajar a un ritmo óptimo y de manera muy eficaz en los primeros 5 sprints, durante el 6to creemos que nos sentimos confiados y eso nos jugó en contra.
+Deberemos trabajar en ello para que no nos vuelva a ocurrir en el próximo tramo del proyecto, ya que nos encontramos muy cerca de llegar al objetivo final.
+El trabajo en conjunto sigue siendo un pilar clave en nuestra metodología, pero entendemos que quizás en oportunidades donde el tiempo es limitado debemos dividirnos las tareas.
 
 ## - Más de -
 
-Trabajo en conjunto, reuniones en equipo donde hay espacio para el crecimiento tanto individual como grupal, escuchando todas las opiniones y puntos de vista. Seguir buscando nuevas herramientas para lograr una mejora continua.
+Como equipo, contamos con un gran nivel de confianza, lo que nos permite seguir creciendo y avanzando en conjunto. Nos alentamos mutuamente, nos acompañamos en el crecimiento y creo que eso se vuelca rápidamente en el proyecto.
 
 ## - Continuar haciendo -
 
-Como ya mencionamos anteriormente,  creemos que estamos funcionando muy bien como equipo, con lo cual siempre nos proponemos seguir trabajando así.  
-Valoramos incluso que alternamos el cronograma de reuniones para analizar cuando eran mas productivos los encuentros, y gracias a autoconocimiento del grupo podemos determinar en que momentos es preferible avanzar con el desarrollo del sprint y cuando es mejor hacer una pausa para retomar el encuentro con mejores ideas, más energía o con nuevas soluciones.
+Creemos que el dialogo permanente y el trabajo en equipo nos permitió alcanzar la comodidad y eficacia que logramos tener hoy.
+Si bien proponemos comenzar a realizar algunas tareas de manera individual para optimizar los tiempos, estamos seguros que la forma de avanzar en el desarrollo de las mismas es con comunicación permanente e intercambio de ideas y opiniones.
   
-En cuanto a **“Dejar de hacer“ y “Menos de”**, estamos continuamente en diálogo, donde hay lugar para inquietudes y consultas, tanto personales como del equipo, por lo que intentamos no repetir situaciones que sucedieron en el pasado porque hoy tenemos las herramientas para evitar que eso ocurra.
+En cuanto a **“Dejar de hacer“ y “Menos de”**, creemos que por su dificultad y carga de trabajo este Sprint fue en el que más obstaculos encontramos, ya que la metodología de trabajo que veniamos llevando no alcanzó.
+Debemos poner el foco en esta situación a fin de poder evitar estas trabas, creemos que tenemos las herramientas necesarias para poder encarar los próximos objetivos de manera mas eficiente.
   
   ***   
 
