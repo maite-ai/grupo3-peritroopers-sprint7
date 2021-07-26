@@ -10,7 +10,7 @@ body {
     background-color: #f8f1f1;
 }
 
-.login-page .error-input, .register-form .error-input {
+.error-input {
     border-color: red;
     color: red;
 }

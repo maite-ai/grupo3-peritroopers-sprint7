@@ -3,7 +3,7 @@ const router = express.Router();
 const productController = require('../controller/productController');
 const uploadFile = require('../middlewares/multerMiddlewareProduct');
 const validations = require('../middlewares/productValidationsMiddleware');
-const authMiddleware=require('../middlewares/authMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const userAuthMiddleware = require('../middlewares/userAuthMiddleware');
 
 router.get("/productCart", authMiddleware, productController.productCart);
@@ -15,6 +15,6 @@ router.get('/:id', productController.detail);
 router.get('/:id/edit', authMiddleware, userAuthMiddleware, productController.edit);
 router.put('/:id', uploadFile.single('image'), validations, productController.update);
 router.get('/delete/:id', authMiddleware, userAuthMiddleware, productController.delete);
-router.delete('/delete/:id', productController.destroy);
+router.delete('/delete/:id', authMiddleware, userAuthMiddleware, productController.destroy);
 
 module.exports = router;
