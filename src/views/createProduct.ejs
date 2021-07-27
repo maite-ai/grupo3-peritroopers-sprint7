@@ -10,55 +10,57 @@
                 type="text" 
                 name="name" 
                 id="name" 
-                class="edits <%= locals.errors && errors.name?'is-invalid':null %>"
+                class="edits <%= locals && locals.errors && errors.name?'error-input': null %>"
                 value="<%= locals.oldData?oldData.name:null %>"
             >
-            <% if(locals.errors && errors.name) { %>
-                <div>
-                    <%= errors.name.msg %>
+                <div class="error-input">
+                    <%= locals && locals.errors && errors.name.msg %>
                 </div>
-            <% } %>
+    
             <label for="" class="edits-2">Descripción:</label>
             <textarea
                 name="description" 
                 id="description"
                 cols="30"
                 rows="10" 
-                class="edits <%= locals.errors && errors.description?'is-invalid':null %>"
+                class="edits <%= locals && locals.errors && errors.description?'error-input': null %>"
             ><%=locals.oldData?oldData.description:null%></textarea>
-            <% if(locals.errors && errors.description) { %>
-                <div>
-                    <%= errors.description.msg %>
+                <div class="error-input">
+                    <%= locals && locals.errors && errors.description && errors.description.msg %>
                 </div>
-            <% } %>
+
             <label for="" class="edits-2">Imágen:</label>
             <input
                 type="file" 
                 name="image" 
                 id="image"
-                class= "<%= locals.errors && errors.image?'is-invalid':null %>"
+                class= "<%= locals && locals.errors && errors.image?'error-input':null %>"
                 value="<%= locals.oldData?oldData.image:null %>"
             >
-            <% if(locals.errors && errors.image) { %>
                 <div>
-                    <%= errors.image.msg %>
+                    <%= locals && locals.errors && errors.image && errors.image.msg %>
                 </div>
-            <% } %>
+
             <label for="" class="edits-2">Categoría:</label>
             <select name="categoryId" id="category" class="edits">
                 <option value=3>Auriculares</option>
-                <option value=2>Teclados</option>
-                <option value=4>Mouse</option>
                 <option value=1>Micrófonos</option>
+                <option value=4>Mouse</option>
+                <option value=2>Teclados</option>
             </select>
+
             <label for="" class="edits-2">Color:</label>
             <select name="colorId" id="color" class="edits">
-                <option value=1>Rojo</option>
+                <option value=5>Azul</option>
                 <option value=2>Blanco</option>
-                <option value=4>Verde</option>
                 <option value=6>Celeste</option>
                 <option value=3>Negro</option>
+                <option value=1>Rojo</option>
+                <option value=7>Rosa</option>
+                <option value=4>Verde</option>
+                <option value=8>Violeta</option>
             </select>
+
             <label for="" class="edits-2">Marca:</label>
             <select name="brandId" id="brand" class="edits">
                 <option value=7>Blue</option>
@@ -67,36 +69,37 @@
                 <option value=1>Logitech</option>
                 <option value=5>Razer</option>
                 <option value=2>Redragon</option>
+                <option value=6>Shure</option>
             </select>
+
             <label for="" class="edits-2">Stock:</label>
             <input type="input" 
             name="stock" 
             id="stock" 
-            class="edits <%= locals.errors && errors.stock?'is-invalid':null %>"
+            class="edits <%= locals && locals.errors && errors.stock?'error-input':null %>"
             value="<%= locals.oldData?oldData.stock:null %>">
-            <% if(locals.errors && errors.stock) { %>
                 <div>
-                    <%= errors.stock.msg %>
+                    <%= locals && locals.errors && errors.stock && errors.stock.msg %>
                 </div>
-            <% } %>
+ 
             <label for="" class="edits-2">Precio:</label>
             <input
                 type="input" 
                 name="price" 
                 id="price" 
-                class="edits <%= locals.errors && errors.price?'is-invalid':null %>"
+                placeholder=" $ 5.457,45"
+                class="edits <%= locals && locals.errors && errors.price?'error-input': null %>"
                 value="<%= locals.oldData?oldData.price:null %>">
-            <% if(locals.errors && errors.price) { %>
                 <div>
-                    <%= errors.price.msg %>
+                    <%= locals && locals.errors && errors.price && errors.price.msg %>
                 </div>
-            <% } %>
+
             <div class="create-button">
                 <button type="submit" id="create-button" class="send-button">Añadir a Catálogo</button>
             </div> 
         </form>
     </main>
     <%- include('partials/footer') %>
-    <script src="/js/validation-product-edit.js"></script>
+    <script src="/js/validation-product.js"></script>
 </body>
 </html>
