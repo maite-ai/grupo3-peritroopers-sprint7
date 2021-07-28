@@ -71,17 +71,22 @@
                     value="<%= product.color %>"
                     autofocus
                 >
-                    <option value=1>Rojo</option>
+                    <option value=5>Azul</option>
                     <option value=2>Blanco</option>
-                    <option value=4>Verde</option>
                     <option value=6>Celeste</option>
                     <option value=3>Negro</option>
+                    <option value=1>Rojo</option>
+                    <option value=7>Rosa</option>
+                    <option value=4>Verde</option>
+                    <option value=8>Violeta</option>
                 </select>
+
                 <label for="" class="edits-2">Marca:</label>
                 <select
                     name="brandId"
                     id="brand"
                     class="edits"
+                    value="<%= product.brand %>"
                     autofocus
                 >
                     <option value=7>Blue</option>
@@ -90,7 +95,9 @@
                     <option value=1>Logitech</option>
                     <option value=5>Razer</option>
                     <option value=2>Redragon</option>
+                    <option value=6>Shure</option>
                 </select>
+
                 <label for="" class="edits-2">Stock:</label>
                 <input
                     type="input"
@@ -103,6 +110,7 @@
                     <div class="error-input">
                         <%= locals && locals.errors && errors.stock && errors.stock.msg %>
                     </div>
+
                 <label for="" class="edits-2">Precio:</label>
                 <input
                     type="input"
@@ -122,6 +130,6 @@
             </form>
         </main>
     <%- include('partials/footer') %>
-    <script src="/js/validation-product-edit.js"></script>
+    <script src="/js/validation-product.js"></script>
 </body>
 </html>

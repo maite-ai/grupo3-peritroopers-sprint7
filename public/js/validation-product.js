@@ -23,6 +23,13 @@ let fieldMin = function(field, min) {
     }
 };
 
+let justNumbers = function(event){
+    if(event.key < 48 || event.key > 57){
+        event.preventDefault
+        return "Solo debe ingresar números"
+    }
+}
+
 const fileExtValidate = function(path, msg, values) {
     let pathExt = path.split('.')[path.split('.').length-1];
     return values.some(value => value === pathExt) ? "" : msg
@@ -52,7 +59,6 @@ let validateProductName = function() {
 let validateDescription = function() {
     let feedback = "";
     let feedbackElement = description.nextElementSibling;
-
     if(fieldIsEmpty(description)) {
         feedback = fieldIsEmpty(description)
     } else if(fieldMin(description, 20)) {
@@ -87,16 +93,17 @@ let validateImage = function(){
     }
 
     feedbackElement.innerText = feedback;
-}
+};
 
 let validateStock = function() {
     let feedback = "";
     let feedbackElement = stock.nextElementSibling;
-    
     if(fieldIsEmpty(stock)) {
         feedback = fieldIsEmpty(stock)
     }
-
+    if(justNumbers(stock)){
+        feedback = justNumbers(stock)
+    }
     if (feedback) {
         stock.classList.add("error-input");
         errors.stock = feedback;

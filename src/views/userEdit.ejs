@@ -13,59 +13,53 @@
                                 <label class="labelName" id="labelName">Nombre</label>
                                 <input 
                                     type="text"
-                                    class="inputName <%= locals.errors && errors.name?'is-invalid':null %>"
+                                    class="inputName <%= locals && locals.errors && errors.name?'error-input':null %>"
                                     name="name"
                                     placeholder="Cosme"
-                                    value="<%= locals.oldData?oldData.name:null %>"
+                                    value="<%= user.name %>"
                                 >
-                                <% if(locals.errors && errors.name) { %>
-                                    <div>
-                                        <%= errors.name.msg %>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.name && errors.name.msg %>
                                     </div>
-                                <% } %>
+
                             </div>
                             <div class="contenedor-regform lastName">
                                 <label class="labelLastName" id="labelLastName">Apellido</label>
                                 <input
                                     type="text"
-                                    class="inputLastName <%= locals.errors && errors.lastName?'is-invalid':null %>"
+                                    class="inputLastName <%= locals && locals.errors && errors.lastName?'is-invalid':null %>"
                                     name="lastName"
                                     placeholder="Fulanito"
-                                    value="<%= locals.oldData?oldData.lastName:null %>"
+                                    value="<%= user.lastName %>"
                                 >
-                                <% if(locals.errors && errors.lastName) { %>
-                                    <div>
-                                        <%= errors.lastName.msg %>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.lastName && errors.lastName.msg %>
                                     </div>
-                                <% } %>
                             </div>
+
                             <div class="contenedor-regform address">
                                 <label class="labelAddress" id="labelAddress">Dirección</label>
                                 <input
                                     type="text"
-                                    class="inputAddress <%= locals.errors && errors.address?'is-invalid':null %>"
+                                    class="inputAddress <%= locals && locals.errors && errors.address?'is-invalid':null %>"
                                     name="address"
                                     placeholder="Dirección"
-                                    value="<%= locals.oldData?oldData.address:null %>"
+                                    value="<%= user.address %>"
                                 >
-                                <% if(locals.errors && errors.address) { %>
-                                    <div>
-                                        <%= errors.address.msg %>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.address && errors.address.msg %>
                                     </div>
-                                <% } %>
                             </div>
+
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
                                 <input type="file" class="inputAvatar" name="avatar">
-                                <input type="hidden" name="oldImage" id="image" value="<%= user.image %>">
-                                <% if(locals.errors && errors.avatar){ %>
-                                    <div>
-                                        <%= errors.avatar.msg %>
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.avatar && errors.avatar.msg %>
                                     </div>
-                                <% } %>
+                                <input type="hidden" name="oldImage" id="image" value="<%= user.image %>">
                             </div>
-                        </div>
-                        
+                        </div>                  
 
                         <div class="reg-button">
                             <div class="send-box">
@@ -76,6 +70,7 @@
                 </section>
             </main>
             <%- include('partials/footer') %>
+            <script src="/js/validation-register.js"></script>
     </body>
 
 </html>
