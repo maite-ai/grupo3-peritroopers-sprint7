@@ -5,9 +5,9 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require('express-session')
 const cookies=require('cookie-parser')
-const userLoggedMiddleware=require('./middlewares/userLoggedMiddleware')
+const userLoggedMiddleware=require('./src/middlewares/userLoggedMiddleware')
 
-const publicPatch = path.resolve(__dirname, "../public");
+const publicPatch = path.resolve(__dirname, "./public");
 
 app.use(express.static(publicPatch));
 app.use(session({
@@ -17,15 +17,15 @@ app.use(session({
 }))
 app.use(cookies())
 app.use(userLoggedMiddleware)
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride('_method'));
 
 //Le indicamos a express el requerimiento de rutas
-const homeRouter = require('./routes/homeRouter');
-const userRouter = require('./routes/userRouter');
-const productRouter = require('./routes/productRouter');
+const homeRouter = require('./src/routes/homeRouter');
+const userRouter = require('./src/routes/userRouter');
+const productRouter = require('./src/routes/productRouter');
 
 app.use('/users', userRouter);
 app.use('/', homeRouter);
