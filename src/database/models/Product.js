@@ -61,7 +61,8 @@ module.exports = (sequelize, dataTypes) => {
     colorId: dataTypes.INTEGER.UNSIGNED,
   }, {
     sequelize,
-    modelName: 'Product'
+    modelName: 'Product',
+    timestamps: false
   });
   
   return Product
