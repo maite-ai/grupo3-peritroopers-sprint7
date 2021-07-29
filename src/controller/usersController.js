@@ -105,11 +105,11 @@ let userController = {
             }
             return res.render('login', {
                 errors: {
-                    email: {
-                        msg: 'Credenciales inválidas'
+                    password: {
+                        msg: 'Contraseña incorrecta'
                     }
                 }
-            });  
+            });
         }
 
         return res.render('login', {

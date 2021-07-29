@@ -10,7 +10,7 @@ function userLoggedMiddleware(req, res, next){
 	}
 	next();
 }
-/* async function userLoggedMiddleware(req, res, next) {
+ /*async function userLoggedMiddleware(req, res, next) {
 	try{
 		res.locals.isLogged = false;
 

@@ -22,7 +22,7 @@
                             placeholder="Correo Electrónico" 
                             class="sign-in-control <%= locals && locals.errors && errors.email?'error-input':null %>">
                             <span class="error-input">
-                                <%= locals && locals.errors && errors.name && errors.email.msg %>
+                                <%= locals && locals.errors && errors.email && errors.email.msg %>
                             </span>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                             placeholder="Contraseña" 
                             class="sign-in-control <%= locals && locals.errors && errors.password?'error-input':null %>">
                             <span class="error-input">
-                                <%= locals && locals.errors && errors.name && errors.password.msg %>
+                                <%= locals && locals.errors && errors.password && errors.password.msg %>
                             </span>
                         </div>
                     </div>

@@ -30,9 +30,7 @@ let passwordValidation = function() {
 
     if(password.value.trim() == ''){
         feedback = 'Debes ingresar una contraseña';
-    } else if(password.value.length < 8) {
-        feedback = 'La contraseña debe contener 8 caracteres como mínimo'
-    } 
+    }
 
     if(feedback) {
         password.classList.add('error-input');
